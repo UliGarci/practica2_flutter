@@ -6,6 +6,8 @@ const SplashScreen({ super.key });
 
   @override
   Widget build(BuildContext context){
-    return home();
+    return Center(
+      child: Image.asset('asdasd',width: 200,height: 200)
+    );
   }
 }
