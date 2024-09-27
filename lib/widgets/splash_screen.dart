@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:learning_b/widgets/home.dart';
 
-class SplashScreen extends StatelessWidget {
-const SplashScreen({ super.key });
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  Widget build(BuildContext context){
-    return Center(
-      child: Image.asset('assets/logo.png',width: 200,height: 200)
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacementNamed(context, '/home');
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Image.asset(
+          'assets/logo.png',
+          width: 200,
+          height: 200,
+        ),
+      ),
     );
   }
 }
