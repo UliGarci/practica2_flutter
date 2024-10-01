@@ -13,8 +13,6 @@ class navigation extends StatefulWidget {
 
 class _navigationState extends State<navigation> {
   int _selectedIndex =0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     home(),
     top(),
@@ -38,17 +36,24 @@ class _navigationState extends State<navigation> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.star),
+            label: 'Top 5',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.room_service),
+            label: 'Reservacion',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        
       ),
     );
   }

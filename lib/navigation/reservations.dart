@@ -12,13 +12,13 @@ class reservations extends StatelessWidget {
       body: const Center(
         child: Text('reservaciones'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context,'/profile') ,
-        backgroundColor: const Color.fromARGB(255, 214, 22, 153),
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-        child: const Icon(Icons.skip_next_sharp),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () => Navigator.pushNamed(context,'/profile') ,
+      //   backgroundColor: const Color.fromARGB(255, 214, 22, 153),
+      //   foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+      //   child: const Icon(Icons.skip_next_sharp),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

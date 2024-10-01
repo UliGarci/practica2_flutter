@@ -12,13 +12,13 @@ class top extends StatelessWidget {
       body: const Center(
         child: Text('top 5'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context,'/reservations') ,
-        backgroundColor: const Color.fromARGB(255, 214, 22, 153),
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-        child: const Icon(Icons.skip_next_outlined),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () => Navigator.pushNamed(context,'/reservations') ,
+      //   backgroundColor: const Color.fromARGB(255, 214, 22, 153),
+      //   foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+      //   child: const Icon(Icons.skip_next_outlined),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

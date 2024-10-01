@@ -12,13 +12,13 @@ class home extends StatelessWidget {
       body: const Center(
         child: Text('inicio'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context,'/top') ,
-        backgroundColor: const Color.fromARGB(255, 214, 22, 153),
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-        child: const Icon(Icons.skip_next),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () => Navigator.pushNamed(context,'/top') ,
+      //   backgroundColor: const Color.fromARGB(255, 214, 22, 153),
+      //   foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+      //   child: const Icon(Icons.skip_next),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }
 }
