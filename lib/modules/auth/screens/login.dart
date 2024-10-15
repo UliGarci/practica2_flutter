@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:learning_b/kernel/widgets/custom_text_field_password.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -68,21 +69,7 @@ String? validatePassword(String? value){
                   keyboardType: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: 32,),
-                TextFormField(
-                  controller: _passwordcontroller,
-                  obscureText: _isObscure,
-                  validator: validatePassword,
-                  decoration: InputDecoration(
-                    hintText: 'Contraseña',
-                    label: const Text('Contraseña'),
-                    suffixIcon: IconButton(onPressed: (){
-                      setState(() {
-                        _isObscure = !_isObscure;
-                      });
-                    },
-                    icon: Icon(_isObscure ? Icons.visibility : Icons.visibility_off))
-                  ),
-                ),
+                TextFieldPassword(controller: _passwordcontroller),
                 const SizedBox(height: 50,),
                 SizedBox(
                   height: 48,
@@ -110,7 +97,7 @@ String? validatePassword(String? value){
                     ),
                 ),
                 const InkWell(
-                  child: Text('Crear cuenta'),
+                  child: Text('Crear cuenta', style: TextStyle(color:Colors.blue),),
                 )
               ],
             ),

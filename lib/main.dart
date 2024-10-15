@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_b/modules/auth/screens/create_account.dart';
 import 'package:learning_b/modules/auth/screens/login.dart';
 import 'package:learning_b/navigation/home.dart';
 import 'package:learning_b/navigation/navigation.dart';
@@ -33,7 +34,8 @@ class MainApp extends StatelessWidget {
         '/profile':(context) => const profile(),
         '/reservations':(context) => const reservations(),
         '/top':(context)=>const top(),
-        '/login':(context)=>const Login()
+        '/login':(context)=>const Login(),
+        '/register':(context)=>const CreateAccount(),
       },
     );
   }
