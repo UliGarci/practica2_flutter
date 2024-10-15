@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -25,6 +26,14 @@ class _LoginState extends State<Login> {
     return 'Por favor, ingrese un correo electrónico válido';
   }
   return null; // Si es válido, no devuelve ningún error
+}
+
+String? validatePassword(String? value){
+  if(value==null || value.isEmpty){
+    return 'Ingrese una contraseña';
+  }else{
+    return null;
+  }
 }
 
   @override
@@ -62,6 +71,7 @@ class _LoginState extends State<Login> {
                 TextFormField(
                   controller: _passwordcontroller,
                   obscureText: _isObscure,
+                  validator: validatePassword,
                   decoration: InputDecoration(
                     hintText: 'Contraseña',
                     label: const Text('Contraseña'),
@@ -78,13 +88,19 @@ class _LoginState extends State<Login> {
                   height: 48,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: (){
+                    onPressed: () async {
                       if(_formKey.currentState!.validate()){
-                        print('Datos -> ${_emailcontroller.text} ${_passwordcontroller.text}');
+                        try {
+                          final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
+                          print("credencial: $credential");
+                        } catch (e) {
+                          print('Error en firebase: $e');
+                        }
+                        // print('Datos -> ${_emailcontroller.text} ${_passwordcontroller.text}');
                       }
                     },
                     style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.blueAccent,
+                      backgroundColor: Colors.pink,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16)
@@ -92,6 +108,9 @@ class _LoginState extends State<Login> {
                     ),
                     child: const Text('Iniciar sesión')
                     ),
+                ),
+                const InkWell(
+                  child: Text('Crear cuenta'),
                 )
               ],
             ),
