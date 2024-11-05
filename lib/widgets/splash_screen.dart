@@ -15,10 +15,11 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 3), () {
       FirebaseAuth.instance.authStateChanges().listen((User? user) {
         if (user != null) {
-          print(user.uid);
+                Navigator.pushReplacementNamed(context, '/menu');
+        }else{
+           Navigator.pushReplacementNamed(context, '/login');
         }
       });
-      Navigator.pushReplacementNamed(context, '/login');
     });
   }
 

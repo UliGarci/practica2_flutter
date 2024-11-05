@@ -39,7 +39,14 @@ class profile extends StatelessWidget {
           SizedBox(
               width: double.infinity,
               height: 48,
-              child: ElevatedButton(onPressed:()async=>await FirebaseAuth.instance.signOut(), child: const Text('Cerrar sesión')),)
+               child: ElevatedButton(
+                onPressed:()async{
+                  print('Cerrar sesión');
+                  await FirebaseAuth.instance.signOut();
+                  },
+                child: const Text('Cerrar sesión')
+                ),
+              )
         ],
       ),
     );

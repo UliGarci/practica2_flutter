@@ -79,8 +79,9 @@ String? validatePassword(String? value){
                       if(_formKey.currentState!.validate()){
                         try {
                           final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
+                          
                           print("credencial: $credential");
-                        } catch (e) {
+                        } on FirebaseAuthException catch  (e) {
                           print('Error en firebase: $e');
                         }
                         // print('Datos -> ${_emailcontroller.text} ${_passwordcontroller.text}');
@@ -96,8 +97,12 @@ String? validatePassword(String? value){
                     child: const Text('Iniciar sesión')
                     ),
                 ),
-                const InkWell(
-                  child: Text('Crear cuenta', style: TextStyle(color:Colors.blue),),
+                SizedBox(height: 12,),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/register');
+                  },
+                  child: const Text('Crear cuenta', style: TextStyle(color:Colors.blue),),
                 )
               ],
             ),
